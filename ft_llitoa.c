@@ -6,7 +6,7 @@
 /*   By: mrosario <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/17 21:53:38 by mrosario          #+#    #+#             */
-/*   Updated: 2019/12/17 21:53:45 by mrosario         ###   ########.fr       */
+/*   Updated: 2019/12/17 22:25:21 by mrosario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,12 @@ char		*ft_llitoa(long long int n)
 	char				*ptr;
 
 	if (n == 0)
-		return ("0");
-	else if (n == -0)
-		return ("-0");
+	{
+		if (!(ptr = ft_calloc(2, sizeof(char))))
+			return (ptr);
+		*ptr = '0';
+		return (ptr);
+	}
 	byte = 1;
 	ncpy = n < 0 ? n * -1 : n;
 	while ((ncpy = ncpy / 10) > 0)
