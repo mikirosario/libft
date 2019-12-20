@@ -6,7 +6,7 @@
 #    By: mrosario <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 00:04:22 by mrosario          #+#    #+#              #
-#    Updated: 2019/12/18 18:52:53 by mrosario         ###   ########.fr        #
+#    Updated: 2019/12/20 22:22:50 by mrosario         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	  ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
 	  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 	  ft_isspace.c ft_putchar.c ft_putstr.c ft_filler.c ft_llitoa.c \
-	  ft_llitoa_base.c ft_strtolower.c
+	  ft_llitoa_base.c ft_strtolower.c ft_thousep.c
 
 BSRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 	   ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \

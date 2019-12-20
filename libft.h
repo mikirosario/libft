@@ -6,7 +6,7 @@
 /*   By: mrosario <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 00:30:21 by mrosario          #+#    #+#             */
-/*   Updated: 2019/12/18 18:53:22 by mrosario         ###   ########.fr       */
+/*   Updated: 2019/12/20 22:22:20 by mrosario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int				ft_isprint(int c);
 int				ft_isspace(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
+char			*ft_thousep(char *numstr, char sep);
 char			*ft_strtolower(char *str);
 char			*ft_strchr(char const *s, int c);
 char			*ft_strrchr(char const *s, int c);
