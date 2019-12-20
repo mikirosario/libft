@@ -6,7 +6,7 @@
 /*   By: mrosario <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/20 19:42:54 by mrosario          #+#    #+#             */
-/*   Updated: 2019/12/20 22:59:29 by mrosario         ###   ########.fr       */
+/*   Updated: 2019/12/20 23:48:55 by mrosario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,13 @@ char	*ft_thousep(char *numstr, char sep)
 	newlen = comcount + strlen--;
 	if (!(sepnum = ft_calloc(1 + newlen--, sizeof(char))))
 		return (NULL);
-	while (strlen >= 0)
+	while (strlen >= 0 && numstr[strlen] != '-')
 	{
 		comi == 3 ? (sepnum[newlen--] = sep) : \
 					(sepnum[newlen--] = numstr[strlen--]);
 		comi == 3 ? comi -= 3 : comi++;
 	}
+	if (numstr[strlen] == '-')
+		sepnum[newlen] = numstr[strlen];
 	return (sepnum);
 }
