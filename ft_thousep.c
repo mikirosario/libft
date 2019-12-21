@@ -6,11 +6,12 @@
 /*   By: mrosario <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/20 19:42:54 by mrosario          #+#    #+#             */
-/*   Updated: 2019/12/21 01:13:11 by mrosario         ###   ########.fr       */
+/*   Updated: 2019/12/21 02:24:22 by mrosario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	ft_sepcount(char *numstr, int strlen)
 {
@@ -21,7 +22,7 @@ static int	ft_sepcount(char *numstr, int strlen)
 	if (numstr[0] != '-' && strlen > 3)
 		comcount = 1 + ((strlen - 4) / 3);
 	else if (numstr[0] == '-' && strlen > 4)
-		comcount = 1 + ((strlen - 4 / 3));
+		comcount = 1 + ((strlen - 5) / 3);
 	newlen = comcount + strlen;
 	return (newlen);
 }
@@ -46,7 +47,7 @@ char		*ft_thousep(char *numstr, char sep)
 		strlen--;
 		numstr++;
 	}
-	while (strlen >= 0)
+	while (strlen >= 0 && numstr[strlen] != '-')
 	{
 		comi == 3 ? (sepnum[newlen--] = sep) : \
 					(sepnum[newlen--] = numstr[strlen--]);
