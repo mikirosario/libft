@@ -6,7 +6,7 @@
 /*   By: mrosario <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 00:30:21 by mrosario          #+#    #+#             */
-/*   Updated: 2019/12/22 07:49:26 by mrosario         ###   ########.fr       */
+/*   Updated: 2019/12/22 09:30:53 by mrosario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_LIBFT_H
 
 # include <stdlib.h>
+# include <wchar.h>
 
 typedef struct	s_list
 {
@@ -29,6 +30,7 @@ void			*ft_memmove(void *dst, void const *src, size_t len);
 void			*ft_memchr(void const *s, int c, size_t n);
 int				ft_memcmp(void const *s1, void const *s2, size_t n);
 size_t			ft_strlen(char const *s);
+size_t			ft_wstrlen(wchar_t const *s);
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
 int				ft_isalnum(int c);
@@ -62,6 +64,7 @@ void			ft_putchar(char const c);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 size_t			ft_putstr(char const *str, size_t len);
+size_t			ft_wputstr(wchar_t const *str, size_t len);
 void			ft_filler(char c, size_t n);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
