@@ -6,13 +6,13 @@
 /*   By: mrosario <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/17 21:53:38 by mrosario          #+#    #+#             */
-/*   Updated: 2019/12/17 22:25:21 by mrosario         ###   ########.fr       */
+/*   Updated: 2019/12/22 08:25:17 by mrosario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_intchar(char *c, size_t endpos, long long int n)
+static char	*ft_intchar(char *c, size_t endpos, unsigned long long int n)
 {
 	while (endpos > 0 && n > 0)
 	{
@@ -24,9 +24,9 @@ static char	*ft_intchar(char *c, size_t endpos, long long int n)
 
 char		*ft_llitoa(long long int n)
 {
-	size_t				byte;
-	long long int		ncpy;
-	char				*ptr;
+	size_t						byte;
+	unsigned long long int		ncpy;
+	char						*ptr;
 
 	if (n == 0)
 	{
