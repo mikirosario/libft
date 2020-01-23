@@ -6,7 +6,7 @@
 /*   By: mrosario <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 00:30:21 by mrosario          #+#    #+#             */
-/*   Updated: 2019/12/22 09:30:53 by mrosario         ###   ########.fr       */
+/*   Updated: 2020/01/23 17:25:41 by mrosario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
 char			**ft_split(char const *s, char c);
 char			*ft_itoa(int n);
+char			*ft_itoa_base(long long int num, int base);
 char			*ft_llitoa(long long int n);
 char			*ft_llitoa_base(long long int num, int base);
 char			*ft_lluitoa(unsigned long long int n);

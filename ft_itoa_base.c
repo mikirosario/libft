@@ -6,10 +6,11 @@
 /*   By: mrosario <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 12:57:58 by mrosario          #+#    #+#             */
-/*   Updated: 2020/01/23 17:07:41 by mrosario         ###   ########.fr       */
+/*   Updated: 2020/01/23 17:26:36 by mrosario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 char	*ft_intchar(char *str, int endpos, unsigned long long int num, int base)
@@ -29,6 +30,8 @@ char	*ft_itoa_base(long long int num, int base)
 	unsigned long long int	ncpy;
 	char					*ptr;
 
+	if (base < 2 || base > 36)
+		return (ptr = ft_strdup("ft_itoa_base supports base values 2-32"));
 	if (num == 0)
 	{
 		if (!(ptr = malloc(2 * sizeof(char))))
