@@ -6,7 +6,7 @@
 /*   By: mrosario <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 00:30:21 by mrosario          #+#    #+#             */
-/*   Updated: 2020/01/23 17:25:41 by mrosario         ###   ########.fr       */
+/*   Updated: 2020/02/03 20:26:21 by mrosario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void			*ft_memccpy(void *dst, void const *src, int c, size_t n);
 void			*ft_memmove(void *dst, void const *src, size_t len);
 void			*ft_memchr(void const *s, int c, size_t n);
 int				ft_memcmp(void const *s1, void const *s2, size_t n);
+int				ft_chrcmp(char *s1, char c);
 size_t			ft_strlen(char const *s);
 size_t			ft_wstrlen(wchar_t const *s);
 int				ft_isalpha(int c);
@@ -78,5 +79,6 @@ void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *l, void *(*f)(void *), void (*del)(void *));
+int				ft_get_next_line(int fd, char **line);
 
 #endif
