@@ -6,11 +6,17 @@
 /*   By: mrosario <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 20:17:10 by mrosario          #+#    #+#             */
-/*   Updated: 2020/02/03 20:25:55 by mrosario         ###   ########.fr       */
+/*   Updated: 2020/02/03 20:37:26 by mrosario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include "libft.h"
+
+#define BUFFER_SIZE 4
 
 static int	ft_ncases(char **qfd, char **line)
 {

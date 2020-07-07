@@ -6,7 +6,7 @@
 /*   By: mrosario <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 00:30:21 by mrosario          #+#    #+#             */
-/*   Updated: 2020/02/03 20:26:21 by mrosario         ###   ########.fr       */
+/*   Updated: 2020/07/07 17:33:08 by mrosario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct	s_list
 {
 	void			*content;
 	struct s_list	*next;
+	size_t			len;
 }				t_list;
 
 void			*ft_memset(void *b, int c, size_t len);
