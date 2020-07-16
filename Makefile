@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mrosario <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: mrosario <mrosario@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 00:04:22 by mrosario          #+#    #+#              #
-#    Updated: 2020/02/03 20:26:52 by mrosario         ###   ########.fr        #
+#    Updated: 2020/07/16 17:25:34 by mrosario         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,18 +28,28 @@ BSRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 	   ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
 	   ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
+PFSRC = ft_printf.c preppers.c parsers.c printers.c intprinters.c \
+		hexprinters.c intformat.c uintformat.c charformat.c checkers.c \
+		intprinteraux.c ft_printf_bonus.c preppers_bonus.c \
+		parsers_bonus.c printers_bonus.c intprinters_bonus.c \
+		hexprinters_bonus.c intformat_bonus.c uintformat_bonus.c \
+		charformat_bonus.c checkers_bonus.c intprinteraux_bonus.c
+
+PFDIR = ./printf/
 
 OBJ = $(SRC:.c=.o)
 
 BOBJ = $(BSRC:.c=.o)
 
+PFOBJ = $(PFSRC:.c=.o)
+
 CFLAG = -Wall -Werror -Wextra -I
 
 all: $(NAME)
 
-$(NAME): libft.h
-	gcc $(CFLAG) ./ -c $(SRC) $(BSRC)
-	ar -rc $(NAME) $(OBJ) $(BOBJ)
+$(NAME): libft.h ./printf/libftprintf.h
+	gcc $(CFLAG) ./ -c $(SRC) $(BSRC) $(addprefix ./printf/,$(PFSRC))
+	ar -rc $(NAME) $(OBJ) $(BOBJ) $(PFOBJ)
 	ranlib $(NAME)
 
 clean:

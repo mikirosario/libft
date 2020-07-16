@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrosario <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mrosario <mrosario@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 00:30:21 by mrosario          #+#    #+#             */
-/*   Updated: 2020/07/07 17:33:08 by mrosario         ###   ########.fr       */
+/*   Updated: 2020/07/16 17:34:23 by mrosario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <wchar.h>
+# include "./printf/libftprintf.h"
 
 typedef struct	s_list
 {
