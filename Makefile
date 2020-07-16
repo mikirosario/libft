@@ -6,7 +6,7 @@
 #    By: mrosario <mrosario@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 00:04:22 by mrosario          #+#    #+#              #
-#    Updated: 2020/07/16 17:25:34 by mrosario         ###   ########.fr        #
+#    Updated: 2020/07/16 17:43:35 by mrosario         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,6 @@ PFSRC = ft_printf.c preppers.c parsers.c printers.c intprinters.c \
 		hexprinters_bonus.c intformat_bonus.c uintformat_bonus.c \
 		charformat_bonus.c checkers_bonus.c intprinteraux_bonus.c
 
-PFDIR = ./printf/
-
 OBJ = $(SRC:.c=.o)
 
 BOBJ = $(BSRC:.c=.o)
@@ -60,9 +58,9 @@ fclean: clean
 
 re: fclean all
 
-bonus: libft.h
-	gcc $(CFLAG) ./ -c $(BSRC)
-	ar -rc $(NAME) $(BOBJ)
+bonus: libft.h ./printf/libftprintf.h
+	gcc $(CFLAG) ./ -c $(SRC) $(BSRC) $(addprefix ./printf/,$(PFSRC))
+	ar -rc $(NAME) $(OBJ) $(BOBJ) $(PFOBJ)
 	ranlib $(NAME)
 
 .PHONY: all clean fclean re bonus
