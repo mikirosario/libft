@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lluitoa_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrosario <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mrosario <mrosario@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/22 07:37:47 by mrosario          #+#    #+#             */
-/*   Updated: 2019/12/22 07:49:07 by mrosario         ###   ########.fr       */
+/*   Updated: 2020/07/21 20:17:20 by mrosario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_intchar(char *c, size_t endpos, unsigned long long int n, int base)
+static char	*ft_intchar(char *c, size_t endpos, unsigned long long int n, \
+int base)
 {
 	while (endpos > 0 && n > 0)
 	{
