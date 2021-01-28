@@ -6,7 +6,7 @@
 /*   By: mrosario <mrosario@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 00:30:21 by mrosario          #+#    #+#             */
-/*   Updated: 2021/01/28 18:41:40 by mrosario         ###   ########.fr       */
+/*   Updated: 2021/01/28 18:51:30 by mrosario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,5 @@ unsigned char	ft_setbit(unsigned char byte, unsigned char bit);
 unsigned char	ft_isbitset(unsigned char byte, unsigned char bit);
 void			*ft_del(void *freethis);
 char			*ft_getnextnum(char *num);
-
 
 #endif
