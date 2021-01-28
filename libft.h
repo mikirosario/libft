@@ -6,7 +6,7 @@
 /*   By: mrosario <mrosario@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 00:30:21 by mrosario          #+#    #+#             */
-/*   Updated: 2020/07/21 20:27:46 by mrosario         ###   ########.fr       */
+/*   Updated: 2021/01/26 20:50:54 by mrosario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,10 @@ t_list			*ft_lstmap(t_list *l, void *(*f)(void *), void (*del)(void *));
 int				ft_get_next_line(int fd, char **line);
 char			*ft_skipspaces(const char *line);
 char			*ft_skipdigits(const char *line);
+unsigned int	ft_setbit(unsigned int byte, int bit);
+int				ft_isbitset(unsigned int byte, int bit);
+void			*ft_del(void *freethis);
+char			*ft_getnextnum(char *num);
+
 
 #endif
