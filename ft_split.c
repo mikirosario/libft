@@ -3,82 +3,100 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrosario <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: miki <miki@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 03:22:29 by mrosario          #+#    #+#             */
-/*   Updated: 2019/11/21 16:37:37 by mrosario         ###   ########.fr       */
+/*   Updated: 2021/02/11 19:05:07 by miki             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-/*
-** Index[0] = rowindex, Index[1] = rowlen, Index[2] = colindex
-*/
-
-static size_t	ft_colcounter(char const *s, char c)
+static size_t	ptr_array_len(char const *s, char c)
 {
-	size_t	rowlen;
+	size_t	len;
 
-	rowlen = 0;
-	if (!s)
-		return (0);
-	while (*s)
+	len = 0;
+	if (*s)
 	{
-		while (*s && *s++ != c)
-			while (*s == c && c)
-			{
-				if (*(s - 1) != c)
-					rowlen++;
-				s++;
-			}
+		while (*s)
+		{
+			if (*s == c && *(s - 1) != c)
+				len++;
+			s++;
+		}
 		if (*(s - 1) != c)
-			rowlen++;
+			len++;
 	}
-	return (++rowlen);
+	return (len);
 }
 
-static size_t	ft_collen(char const *s, char c)
+static size_t	str_fragment_len(char const *s, char c)
 {
-	size_t	collen;
+	size_t	strlen;
 
-	collen = 0;
-	if (!s)
-		return (0);
-	while (*s)
+	strlen = 0;
+	while (s[strlen] && s[strlen] != c)
+		strlen++;
+	return (strlen);
+}
+
+static char		**free_split(char **split, size_t y, char *strim)
+{
+	size_t	i;
+
+	if (strim)
+		free(strim);
+	if (y)
 	{
-		while (*s && *s++ != c)
-			collen++;
+		i = 0;
+		while (i < y)
+		{
+			free(split[i]);
+			split[i] = NULL;
+			i++;
+		}
+		free(split);
+		split = NULL;
 	}
-	return (collen);
+	return (split);
+}
+
+static char		**split_str_cpy(char **split, size_t array_len, char *strim,
+								char c)
+{
+	char	*s;
+	size_t	y;
+	size_t	x;
+
+	s = strim;
+	y = 0;
+	while (array_len--)
+	{
+		if (!(split[y] = ft_calloc((str_fragment_len(s, c) + 1), sizeof(char))))
+			return (free_split(split, y, strim));
+		x = 0;
+		while (*s && *s != c)
+			split[y][x++] = *s++;
+		while (*s && *s == c)
+			s++;
+		y++;
+	}
+	return (free_split(split, 0, strim));
 }
 
 char			**ft_split(char const *s, char c)
 {
-	char	*i;
-	char	**ptr;
-	size_t	index[3];
+	char	**split;
+	char	*strim;
+	size_t	array_len;
 
-	index[0] = 0;
-	index[2] = 0;
-	if (!s)
-		return (NULL);
-	i = ft_strtrim(s, (char[2]) {c, '\0'});
-	index[1] = ft_colcounter(i, c);
-	if (!(ptr = ft_calloc(index[1], sizeof(char *))))
-		return (NULL);
-	while (index[1]-- > 1)
-	{
-		if (!(ptr[index[0]] = ft_calloc(ft_collen(i, c) + 1, sizeof(char))))
-			return (NULL);
-		while (*i != c && *i)
-			ptr[index[0]][index[2]++] = *i++;
-		index[2] = 0;
-		index[0]++;
-		while (*i == c && *i)
-			i++;
-	}
-	ptr[index[0]] = NULL;
-	return (ptr);
+	strim = NULL;
+	if (!s || !(strim = ft_strtrim(s, (char[2]) {c, '\0'})) || !*strim)
+		return (free_split(NULL, 0, strim));
+	array_len = ptr_array_len(s, c);
+	if (!(split = ft_calloc(array_len + 1, sizeof(char *))))
+		return (free_split(split, 0, strim));
+	split[array_len] = NULL;
+	return (split_str_cpy(split, array_len, strim, c));
 }
