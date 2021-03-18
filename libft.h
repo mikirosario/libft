@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrosario <mrosario@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miki <miki@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 00:30:21 by mrosario          #+#    #+#             */
-/*   Updated: 2021/02/06 19:24:17 by mrosario         ###   ########.fr       */
+/*   Updated: 2021/03/19 00:18:38 by miki             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ char			*ft_strtolower(char *str);
 char			*ft_strchr(char const *s, int c);
 char			*ft_strrchr(char const *s, int c);
 int				ft_strncmp(char const *s1, char const *s2, size_t n);
+char			*ft_strncpy(char *dst, const char *src, size_t n);
 size_t			ft_strlcpy(char *dst, char const *src, size_t dstsize);
 size_t			ft_strlcat(char *dst, char const *src, size_t dstsize);
 char			*ft_strnstr(char const *hay, char const *needle, size_t len);
