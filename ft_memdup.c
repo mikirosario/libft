@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miki <miki@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/09 14:45:04 by mrosario          #+#    #+#             */
-/*   Updated: 2021/03/25 01:32:15 by miki             ###   ########.fr       */
+/*   Created: 2021/03/23 01:05:00 by miki              #+#    #+#             */
+/*   Updated: 2021/03/25 03:07:05 by miki             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	*ft_calloc(size_t count, size_t size)
+/*
+** Duplicates any block of memory and returns a pointer to the duplicate. You
+** MUST specify the size of the memory to be duplicated. Returns NULL if the
+** allocation fails.
+*/
+
+void	*ft_memdup(void const *mem, size_t memsize)
 {
-	void	*ptr;
+	void	*dup;
 
-	ptr = malloc(count * size);
-	if (!ptr)
-		return (ptr);
-	ft_bzero(ptr, count * size);
-	return (ptr);
+	dup = ft_calloc(memsize, 1);
+	if (dup != NULL)
+		ft_memcpy(dup, mem, memsize);
+	return (dup);
 }
