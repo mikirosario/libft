@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrosario <mrosario@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miki <miki@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 00:30:21 by mrosario          #+#    #+#             */
-/*   Updated: 2021/03/27 18:15:27 by mrosario         ###   ########.fr       */
+/*   Updated: 2021/04/10 05:51:36 by miki             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "ansi_color_codes.h"
+# include <sys/ioctl.h>
 # include <stdlib.h>
 
 typedef struct s_list
@@ -61,13 +63,13 @@ char			*ft_itoa(int n);
 char			*ft_itoa_base(long long int num, int base);
 char			*ft_lluitoa_base(unsigned long long int num, int base);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void			ft_putchar(char const c);
+int				ft_putchar(int c);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 size_t			ft_putstr(char const *str, size_t len);
 void			ft_filler(char c, size_t n);
 void			ft_putendl_fd(char *s, int fd);
-void			ft_putnbr_fd(int n, int fd);
+void			ft_putnbr_fd(long long int n, int fd);
 t_list			*ft_lstnew(void const *content);
 void			ft_lstadd_front(t_list **alst, t_list *new);
 int				ft_lstsize(t_list *lst);
@@ -86,5 +88,6 @@ void			*ft_del(void *freethis);
 char			*ft_getnextnum(char *num);
 int				ft_strcmp(const char *s1, const char *s2);
 void			*ft_realloc(void *ptr, size_t new_size, size_t old_size);
+int				ft_get_window_size(struct winsize *wsize);
 
 #endif

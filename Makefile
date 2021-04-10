@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mrosario <mrosario@student.42.fr>          +#+  +:+       +#+         #
+#    By: miki <miki@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 00:04:22 by mrosario          #+#    #+#              #
-#    Updated: 2021/03/27 18:15:55 by mrosario         ###   ########.fr        #
+#    Updated: 2021/04/10 09:50:51 by miki             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,11 @@ SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	  ft_lluitoa_base.c ft_itoa_base.c ft_chrcmp.c ft_get_next_line.c \
 	  ft_setbit.c ft_isbitset.c ft_del.c ft_getnextnum.c ft_strcmp.c \
 	  ft_strncpy.c ft_free_split.c ft_memdup.c ft_thousep.c ft_skipspaces.c \
-	  ft_skipdigits.c ft_iscntrl.c \
+	  ft_skipdigits.c ft_iscntrl.c ft_get_window_size.c
+
+BTREE = ft_bintree_add.c ft_bintree_search.c ft_bintree_free.c \
+		ft_bintree_depth.c ft_bintree_print.c ft_bintree_termcaps.c \
+		ft_bintree_balance.c
 
 BSRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 	   ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
@@ -33,18 +37,19 @@ OBJ = $(SRC:.c=.o)
 
 BOBJ = $(BSRC:.c=.o)
 
-CFLAG = -Wall -Werror -Wextra -I
+BTREEOBJ = $(BTREE:.c=.o)
+
+CFLAG = -Wall -Werror -Wextra -g -I ./includes
 
 all: $(NAME)
 
-$(NAME): libft.h
-	gcc $(CFLAG) ./ -c $(SRC) $(BSRC)
-	ar -rc $(NAME) $(OBJ) $(BOBJ)
-	ranlib $(NAME)
+$(NAME):
+	gcc $(CFLAG) -c $(SRC) $(BSRC) $(addprefix ./ft_bintree/,$(BTREE))
+	ar -rcs $(NAME) $(OBJ) $(BOBJ) $(BTREEOBJ)
 
 so:
-	gcc $(CFLAG) ./ -c $(SRC) $(BSRC)
-	gcc -shared -o libft.so $(OBJ) $(BOBJ)
+	gcc $(CFLAG) -c $(SRC) $(BSRC) $(addprefix ./ft_bintree/,$(BTREE))
+	gcc -shared -o libft.so $(OBJ) $(BOBJ) $(BTREEOBJ)
 
 clean:
 	rm -f *.o
