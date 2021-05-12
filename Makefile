@@ -23,7 +23,7 @@ SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	  ft_lluitoa_base.c ft_itoa_base.c ft_chrcmp.c ft_get_next_line.c \
 	  ft_setbit.c ft_isbitset.c ft_del.c ft_getnextnum.c ft_strcmp.c \
 	  ft_strncpy.c ft_free_split.c ft_memdup.c ft_thousep.c ft_skipspaces.c \
-	  ft_skipdigits.c ft_iscntrl.c ft_get_window_size.c
+	  ft_skipdigits.c ft_iscntrl.c ft_get_window_size.c ft_realloc.c
 
 BTREE = ft_bintree_add.c ft_bintree_search.c ft_bintree_free.c \
 		ft_bintree_depth.c ft_bintree_print.c ft_bintree_termcaps.c \

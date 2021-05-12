@@ -17,9 +17,9 @@
 ** new memory block of the size defined by new_size, freeing the old memory
 ** block.
 **
-** If a null pointer is passed, or if new_size is 0, or if new_size is less than
-** old_size, a null pointer will be returned and the old memory will not be
-** freed.
+** If a null pointer is passed but old_size is specified, or if new_size is 0,
+** or if new_size is less than old_size, a null pointer will be returned and the
+** old memory will not be freed.
 **
 ** If the memory allocation fails, a null pointer will be returned and the old
 ** memory will not be freed.
@@ -44,14 +44,14 @@ void	*ft_realloc(void *ptr, size_t new_size, size_t old_size)
 {
 	void	*tmp;
 
-	if (!ptr || !new_size || new_size < old_size)
+	if ((!ptr && old_size) || !new_size || new_size < old_size)
 		return (NULL);
+	tmp = ptr;
 	ptr = ft_calloc(new_size, 1);
 	if (!ptr)
 		return (NULL);
 	if (old_size)
 	{
-		tmp = ptr;
 		ft_memcpy(ptr, tmp, old_size);
 		tmp = ft_del(tmp);
 	}
