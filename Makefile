@@ -6,7 +6,7 @@
 #    By: miki <miki@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 00:04:22 by mrosario          #+#    #+#              #
-#    Updated: 2021/04/10 09:50:51 by miki             ###   ########.fr        #
+#    Updated: 2021/05/12 19:43:40 by mrosario         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ BTREE = ft_bintree_add.c ft_bintree_search.c ft_bintree_free.c \
 
 BSRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 	   ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
-	   ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+	   ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c \
+	   ft_lst_removeone.c
 
 OBJ = $(SRC:.c=.o)
 

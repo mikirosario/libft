@@ -6,7 +6,7 @@
 /*   By: miki <miki@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 00:30:21 by mrosario          #+#    #+#             */
-/*   Updated: 2021/04/10 05:51:36 by miki             ###   ########.fr       */
+/*   Updated: 2021/05/12 19:42:54 by mrosario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *l, void *(*f)(void *), void (*del)(void *));
+void			ft_lst_removeone(t_list **alst, t_list *remove);
 int				ft_get_next_line(int fd, char **line);
 char			*ft_skipspaces(const char *line);
 char			*ft_skipdigits(const char *line);
